@@ -63,7 +63,6 @@ int Queue::back() {
 }
 
 int main() {
-
     Queue q;
 
     int N;
@@ -88,7 +87,5 @@ int main() {
         } else if (command == "back") {
             cout << q.back() << endl;
         }
-
     }
-
 }
