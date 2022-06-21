@@ -1,4 +1,4 @@
-// Graph, BFS, DFS
+// Graph, DFS
 // https://www.acmicpc.net/problem/2210
 
 #include <iostream>
@@ -12,7 +12,7 @@ int dx[] = {0, 0, 1, -1};
 
 set<string> mySet;
 
-void BFS(string graph[][5], int y, int x, int cnt, string str) {
+void DFS(string graph[][5], int y, int x, int cnt, string str) {
     if (cnt == 6) {
         if (mySet.find(str) == mySet.end()) {
             CNT++;
@@ -31,7 +31,7 @@ void BFS(string graph[][5], int y, int x, int cnt, string str) {
             continue;
         }
 
-        BFS(graph, ny, nx, cnt+1, str + graph[y][x]);
+        DFS(graph, ny, nx, cnt+1, str + graph[y][x]);
     }
 }
 
@@ -48,7 +48,7 @@ int main() {
 
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 5; j++) {
-            BFS(graph, i, j, 0, "");
+            DFS(graph, i, j, 0, "");
         }
     }
     cout << CNT;
